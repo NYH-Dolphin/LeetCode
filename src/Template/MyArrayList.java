@@ -19,8 +19,8 @@ public class MyArrayList<T> implements Iterable<T> {
     }
 
     private static final int DEFAULT_CAPACITY = 10; // 默认容量
-    private int size;
-    private T[] list;
+    private int size; // 大小
+    private T[] list; // 实际以数组为存储空间
 
     public MyArrayList() {
         clear();
