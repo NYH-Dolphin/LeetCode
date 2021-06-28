@@ -3,7 +3,7 @@ package DataStructure.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class M2_diagonal_tracerse {
+public class E5_diagonal_tracerse {
 
     public static void main(String[] args) {
 
