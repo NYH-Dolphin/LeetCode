@@ -17,7 +17,6 @@ public class MyLinkList<T> implements Iterable<T> {
     }
 
     private int size;
-    private int modCount = 0;
     private Node<T> beginMarker;
     private Node<T> endMarker;
 
@@ -46,7 +45,6 @@ public class MyLinkList<T> implements Iterable<T> {
         endMarker = new Node<>(null, beginMarker, null);
         beginMarker.next = endMarker;
         size = 0;
-        modCount++;
     }
 
     public int size() {
@@ -77,7 +75,6 @@ public class MyLinkList<T> implements Iterable<T> {
         newNode.prev.next = newNode;
         p.prev = newNode;
         size++;
-        modCount++;
     }
 
     public T get(int index) {
@@ -101,7 +98,7 @@ public class MyLinkList<T> implements Iterable<T> {
         throw new NullPointerException();
     }
 
-    public ArrayList<Integer> getIndexs(T data){
+    public ArrayList<Integer> getIndexes(T data){
         Node<T> node = beginMarker.next;
         ArrayList<Integer> indexes = new ArrayList<>();
         int pos = 0;
@@ -128,15 +125,26 @@ public class MyLinkList<T> implements Iterable<T> {
         return remove(getNode(index));
     }
 
-    public T remove(Node<T> p) {
+    public void printList(){
+        Node<T> node = beginMarker.next;
+        if(!isEmpty()) {
+            System.out.print("begin -> ");
+            while (node != endMarker) {
+                System.out.print(node.data + " -> ");
+                node = node.next;
+            }
+            System.out.println("end");
+        }else{
+            System.out.println("Empty list");
+        }
+    }
+
+    private T remove(Node<T> p) {
         p.next.prev = p.prev;
         p.prev.next = p.next;
         size--;
-        modCount++;
         return p.data;
     }
-
-
 
     private Node<T> getNode(int index) {
         return getNode(index, 0, size());
@@ -167,18 +175,4 @@ public class MyLinkList<T> implements Iterable<T> {
         return null;
     }
 
-
-    public void printList(){
-        Node<T> node = beginMarker.next;
-        if(!isEmpty()) {
-            System.out.print("begin -> ");
-            while (node != endMarker) {
-                System.out.print(node.data + " -> ");
-                node = node.next;
-            }
-            System.out.println("end");
-        }else{
-            System.out.println("Empty list");
-        }
-    }
 }
