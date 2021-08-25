@@ -1,6 +1,6 @@
 package DataStructure.LinkList;
 
-public class E_7_Odd_even_linkedlist {
+public class E7_Odd_even_linkedlist {
 
     public static ListNode oddEvenList(ListNode head) {
         //如果链表小于3个那么直接返回

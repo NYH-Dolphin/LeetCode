@@ -1,23 +1,20 @@
 package DataStructure.LinkList;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-
-public class E_2_LinkedList_cycle2 {
+public class E1_LinkedList_cycle {
     public static void main(String[] args) {
-        ListNode n0 = new ListNode(0);
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(3);
-        n0.next = n1;
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n1;
-        System.out.println(detectCycle(n0).val);
+        ListNode a1 = new ListNode(3);
+        ListNode a2 = new ListNode(2);
+        ListNode a3 = new ListNode(0);
+        ListNode a4 = new ListNode(-4);
+        a1.next = a2;
+        a2.next = a3;
+        a3.next = a4;
+        a4.next = a2;
+        System.out.println(hasCycle(a1));
     }
 
 
-    public static ListNode detectCycle(ListNode head) {
+    public static boolean hasCycle(ListNode head) {
         boolean flag = false;
         ListNode fast = head;// 快指针
         ListNode slow = head;// 慢指针
@@ -34,19 +31,8 @@ public class E_2_LinkedList_cycle2 {
                 break;
             }
         }
-        if(!flag){
-            return null;
-        }else {
-            fast = head;
-            while(fast != slow){
-                fast = fast.next;
-                slow = slow.next;
-            }
-            return fast;
-        }
+        return flag;
     }
-
-
 
     static class ListNode {
         int val;
@@ -57,5 +43,6 @@ public class E_2_LinkedList_cycle2 {
             next = null;
         }
     }
-
 }
+
+

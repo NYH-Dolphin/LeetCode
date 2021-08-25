@@ -1,6 +1,6 @@
 package DataStructure.LinkList;
 
-public class E_4_Remove_nth_node_from_end_of_list {
+public class E4_Remove_nth_node_from_end_of_list {
     public static void main(String[] args) {
         ListNode a1 = new ListNode(1);
         ListNode a2 = new ListNode(2);

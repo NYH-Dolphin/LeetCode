@@ -1,6 +1,6 @@
 package DataStructure.LinkList;
 
-public class E_5_Reverse_linkedlist {
+public class E5_Reverse_linkedlist {
 
     public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package DataStructure.LinkList;
 
 import java.util.ArrayList;
 
-public class E_6_Remove_Linkedlist_elements {
+public class E6_Remove_Linkedlist_elements {
 
     public static void main(String[] args) {
 
